@@ -21,3 +21,14 @@
 
 }(typeof exports === 'undefined' ? window : exports));
 //good
+ function convertToAscii(str) {
+      var result = [];
+      var currentChar = '';
+      var i = 0;
+      for (; i < str.length; i += 1) {
+        currentChar = str[i].charCodeAt(0).toString(2);
+        currentChar = new Array(9 - currentChar.length).join('0') + currentChar;
+        result.push(currentChar);
+      }
+      return result.join('');
+    }
